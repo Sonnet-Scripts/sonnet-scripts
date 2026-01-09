@@ -229,6 +229,10 @@ dbt-compile:
 dbt-docs-generate:
 	@docker compose exec dbtbase /venv/bin/dbt docs generate --project-dir /apps/dbt_project
 
+# Serve dbt documentation
+dbt-docs-serve:
+	@docker compose exec dbtbase /venv/bin/dbt docs serve --project-dir /apps/dbt_project
+
 # Verify dbt transformed data in DuckDB
 verify-dbt:
 	@docker compose exec dbtbase /usr/local/bin/duckdb /apps/dbt.duckdb \
